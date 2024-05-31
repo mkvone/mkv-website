@@ -12,19 +12,19 @@ const nextConfig = {
     },
     output: 'standalone',
 
-    webpack: (
-        config,
-        { buildId, dev, isServer, defaultLoaders, webpack }
-    ) => {
-        if (!dev) {
-            config.optimization.minimize = true; // 미니파이 활성화
-            config.optimization.minimizer = [
-                new TerserPlugin({}),
-            ];
-        }
+    // webpack: (
+    //     config,
+    //     { buildId, dev, isServer, defaultLoaders, webpack }
+    // ) => {
+    //     if (!dev) {
+    //         config.optimization.minimize = true; // 미니파이 활성화
+    //         config.optimization.minimizer = [
+    //             new TerserPlugin({}),
+    //         ];
+    //     }
 
-        return config;
-    },
+    //     return config;
+    // },
     // Optionally, add any other Next.js config below
 };
 
