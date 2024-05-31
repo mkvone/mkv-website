@@ -1,0 +1,30 @@
+name: Next Docker Host Runner
+
+on:
+    push:
+        branches: ['main']
+    pull_request:
+        branches: ['main']
+
+jobs:
+    build:
+        runs-on: [self-hosted, linux, x64]
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Build Docker image
+              run: sudo docker build -t mkv_web_docker_image .
+              working-directory: .
+
+            - name: Stop previous Docker container
+              run: sudo docker stop mkv_web_docker_container || true
+              continue-on-error: true
+
+            - name: Remove previous Docker container
+              run: sudo docker rm mkv_web_docker_container || true
+              continue-on-error: true
+
+            - name: Run Docker container
+              run: sudo docker run -d -p 1111:1111 --name mkv_web_docker_container mkv_web_docker_image --restart unless-stopped

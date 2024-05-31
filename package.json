@@ -1,0 +1,46 @@
+{
+  "name": "mkvone-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "@stylexjs/babel-plugin": "^0.6.1",
+    "@stylexjs/eslint-plugin": "^0.6.1",
+    "@stylexjs/nextjs-plugin": "^0.6.1",
+    "@stylexjs/open-props": "^0.6.1",
+    "@stylexjs/stylex": "^0.6.1",
+    "@tanstack/query-core": "^5.36.1",
+    "@tanstack/react-query": "^5.37.1",
+    "@tanstack/react-query-devtools": "^5.37.1",
+    "color-thief-react": "^2.1.0",
+    "date-fns": "^3.6.0",
+    "jotai": "^2.8.0",
+    "jotai-tanstack-query": "^0.8.5",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18",
+    "react-icons": "^5.2.1",
+    "react-intersection-observer": "^9.10.2",
+    "react-loading-skeleton": "^3.4.0",
+    "sharp": "^0.33.4",
+    "terser-webpack-plugin": "^5.3.10",
+    "wonka": "^6.3.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-private-methods": "^7.24.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "typescript": "^5"
+  }
+}
