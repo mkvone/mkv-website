@@ -11,6 +11,8 @@ const nextConfig = {
         domains: ['raw.githubusercontent.com'],
     },
     output: 'standalone',
+    swcMinify: true,
+
     webpack: (
         config,
         { buildId, dev, isServer, defaultLoaders, webpack }
