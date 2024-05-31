@@ -37,7 +37,12 @@ export const Nav = () => {
 
     return (
         <nav {...stylex.props(styles.nav(theme, isSticky))}>
-            <div {...stylex.props(styles.brand())}>
+            <Link
+                {...stylex.props(
+                    styles.brand(theme, isSticky)
+                )}
+                href={'/'}
+            >
                 <Image
                     src="/logo/mkv_logo2.png"
                     width={50}
@@ -50,7 +55,7 @@ export const Nav = () => {
                     )}
                 />
                 Metta Karuna Validator
-            </div>
+            </Link>
             <div {...stylex.props(styles.navItems)}>
                 {['/', '/staking'].map((path, index) => (
                     <Link
@@ -167,12 +172,20 @@ const styles = stylex.create({
         width: '100%',
         opacity: 0.9,
     }),
-    brand: () => ({
+    brand: (theme, isSticky) => ({
         display: 'flex',
         alignItems: 'center',
         fontSize: text.h4,
         fontWeight: 'bold',
         fontStyle: 'italic',
+        color: isSticky
+            ? theme === 'light'
+                ? colors.WHITE_100
+                : colors.GRAY900
+            : theme === 'light'
+            ? colors.GRAY900
+            : colors.WHITE_100,
+        textDecoration: 'none',
     }),
     logo: (theme, isSticky) => ({
         filter: isSticky ? 'invert(100%)' : 'invert(0)',

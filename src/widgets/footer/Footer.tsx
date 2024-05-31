@@ -139,7 +139,7 @@ export const Footer = () => {
                             />
                         </Link>
                         <Link
-                            href="#"
+                            href="/"
                             {...stylex.props(
                                 styles.icon(theme)
                             )}
