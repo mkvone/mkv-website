@@ -77,7 +77,7 @@ export const DownloadCode = ({ data }: { data: Datum }) => {
                             : '(latest)'}{' '}
                         <br />
                         wget -O {file.name} {file.url}{' '}
-                        --inet4-only
+                        --inet4-only <br />
                     </Styled.Text.P>
                 ))}
             </Styled.CodeContainer>
@@ -141,8 +141,10 @@ export const DecompressCode = ({
                 <br />
                 Decompress the snapshot to your database
                 location. Your database location will be
-                something to the effect of ~/.{data.app}
-                depending on your node implementation.
+                something to the effect of ~/.{
+                    data.app
+                }{' '}
+                &nbsp depending on your node implementation.
             </Styled.Text.P>
             <Styled.CodeContainer>
                 {data.files.map((file, index) => (
@@ -152,7 +154,8 @@ export const DecompressCode = ({
                             ? ''
                             : '(latest)'}
                         <br />
-                        tar -xvf {file.name} -C $HOME/.
+                        lz4 -c -d {file.name} | tar -x -C
+                        $HOME/.
                         {data.app}
                     </Styled.Text.P>
                 ))}
