@@ -144,7 +144,7 @@ export const DecompressCode = ({
                 something to the effect of ~/.{
                     data.app
                 }{' '}
-                &nbsp depending on your node implementation.
+                depending on your node implementation.
             </Styled.Text.P>
             <Styled.CodeContainer>
                 {data.files.map((file, index) => (
